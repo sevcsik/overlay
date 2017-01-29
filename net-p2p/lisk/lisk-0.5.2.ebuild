@@ -10,8 +10,7 @@ SRC_URI="https://downloads.lisk.io/lisk/main/${PV}/${PV}.tar.gz"
 S="${WORKDIR}/${PV}"
 
 src_compile() {
-#	npm install --production || die "Failed to install npm dependencies"
-	return
+	npm install --production || die "Failed to install npm dependencies"
 }
 
 src_install() {
