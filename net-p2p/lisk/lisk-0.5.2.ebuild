@@ -1,13 +1,13 @@
 EAPI=5
 NETWORK=main
 
-inherit user
+inherit user eutils systemd
 
 DESCRIPTION="Full node for the Lisk Blockhain Application Platform"
 SLOT="0"
 LICENSE="MIT"
 KEYWORDS="~amd64"
-
+IUSE="systemd"
 DEPEND="net-misc/wget app-arch/gzip >=net-libs/nodejs-0.12.14 >=dev-db/postgresql-9.6.1"
 RDEPEND=">=net-libs/nodejs-0.12.14 >=dev-db/postgresql-9.6.1"
 SRC_URI="https://downloads.lisk.io/lisk/$NETWORK/$PV/$PV.tar.gz"
@@ -20,6 +20,13 @@ update_config() {
 	sed -ie "s/\"database\": \"lisk_main\"/\"database\": \"$PN\"/" config.json
 	sed -ie "s/\"password\": \"password\"/\"password\": \"\"/" config.json
 	sed -ie "s/\"logFileName\": \"logs\/lisk.log\"/\"logFileName\": \"\/var\/log\/lisk\/lisk.log\"/" config.json
+}
+
+src_prepare() {
+	if use systemd
+	then
+		epatch $FILESDIR/${P}-systemd.patch
+	fi
 }
 
 src_compile() {
@@ -43,6 +50,13 @@ src_install() {
 	dosym /var/lisk /usr/lib/lisk/dapps
 
 	dodir /var/log/lisk
+
+	if use systemd
+	then
+		systemd_dounit lisk.service
+		elog "Systemd unit lisk.service has been installed."
+		elog ""
+	fi
 
 	elog "config.json and genesisBlock.json are symlinked fro /etc/lisk."
 	elog "To enable SSL or forging, edit config.json according to the docs at:"
