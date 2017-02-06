@@ -1,12 +1,8 @@
---- config.json.orig	2017-01-08 21:26:07.000000000 +0100
-+++ config.json	2017-02-06 01:13:51.861339605 +0100
-@@ -1,19 +1,19 @@
- {
--    "port": 8000,
-+    "port": 7000,
-     "address": "0.0.0.0",
-     "version": "0.5.2",
-     "minVersion": "~0.5.0",
+--- config.json.orig	2017-02-07 00:43:16.148459466 +0100
++++ config.json	2017-02-07 00:44:19.337473276 +0100
+@@ -4,16 +4,16 @@
+     "version": "0.6.0a",
+     "minVersion": ">=0.5.0",
      "fileLogLevel": "info",
 -    "logFileName": "logs/lisk.log",
 +    "logFileName": "/var/log/lisk-testnet/lisk.log",
@@ -16,7 +12,7 @@
      "db": {
          "host": "localhost",
          "port": 5432,
--        "database": "lisk_main",
+-        "database": "lisk_test",
 +        "database": "lisk-testnet",
          "user": "",
 -        "password": "password",

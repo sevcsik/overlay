@@ -10,7 +10,7 @@ KEYWORDS="~amd64"
 IUSE="systemd"
 DEPEND="net-misc/wget app-arch/gzip >=net-libs/nodejs-0.12.14 >=dev-db/postgresql-9.6.1"
 RDEPEND=">=net-libs/nodejs-0.12.14 >=dev-db/postgresql-9.6.1"
-SRC_URI="https://downloads.lisk.io/lisk/main/$PV/$PV.tar.gz -> $P.tar.gz"
+SRC_URI="https://downloads.lisk.io/lisk/$NETWORK/$PV/$PV.tar.gz -> $P.tar.gz"
 S="${WORKDIR}/${PV}"
 
 USERNAME="$PN"
