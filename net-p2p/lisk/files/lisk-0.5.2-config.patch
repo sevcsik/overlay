@@ -1,0 +1,22 @@
+--- config.json.orig	2017-02-06 01:09:31.126121991 +0100
++++ config.json	2017-02-06 01:12:15.033089129 +0100
+@@ -4,16 +4,16 @@
+     "version": "0.5.2",
+     "minVersion": "~0.5.0",
+     "fileLogLevel": "info",
+-    "logFileName": "logs/lisk.log",
++    "logFileName": "/var/log/lisk/lisk.log",
+     "consoleLogLevel": "info",
+     "trustProxy": false,
+     "topAccounts": false,
+     "db": {
+         "host": "localhost",
+         "port": 5432,
+-        "database": "lisk_main",
++        "database": "lisk",
+         "user": "",
+-        "password": "password",
++        "password": "",
+         "poolSize": 95,
+         "poolIdleTimeout": 30000,
+         "reapIntervalMillis": 1000,
