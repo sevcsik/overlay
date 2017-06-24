@@ -30,10 +30,6 @@ pkg_setup() {
 
 src_prepare() {
 	eapply_user
-	if use systemd
-	then
-		epatch $FILESDIR/${P}-systemd.patch
-	fi
 }
 
 src_compile() {
@@ -48,7 +44,7 @@ src_install() {
 	dobin cmd/ipfs/ipfs
 	if use systemd
 	then
-		systemd_dounit go-ipfs.service
+		systemd_dounit $FILESDIR/go-ipfs.service
 		elog "Systemd unit go-ipfs.service has been installed"
 	fi
 	dodir /var/lib/${PN}
