@@ -1,0 +1,2 @@
+# Every memeber of the go-ipfs group should be able to run the ipfs process as the server's user.
+%go-ipfs ALL=(go-ipfs) /usr/bin/ipfs
