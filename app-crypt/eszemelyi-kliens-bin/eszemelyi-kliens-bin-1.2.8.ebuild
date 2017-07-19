@@ -33,4 +33,5 @@ src_install () {
 	fperms a+x /usr/lib/KEKKH/eszig-eid /usr/lib/KEKKH/eszig-cmu
 	dosym /usr/lib/KEKKH/eszig-eid /usr/bin/eszig-eid
 	dosym /usr/lib/KEKKH/eszig-cmu /usr/bin/eszig-cmu
+	elog "To use the ReinerSCT Cyberjack Basis reader, please install app-crypt/ccid as well."
 }
