@@ -1,6 +1,7 @@
 EAPI=6
 inherit eutils rpm
 
+DESCRIPTION="Card reader application for Hungarian electonic ID cards"
 LICENSE=eSzemelyi_Kliens_vegfelhasznaloi_nyilatkozat_v5.pdf
 RESTRICT="mirror bindist strip"
 
