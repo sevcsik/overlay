@@ -1,0 +1,13 @@
+[Unit]
+Description=Lisk full node
+After=network.target
+Requires=postgresql-9.6.service
+
+[Service]
+WorkingDirectory=/usr/lib/lisk-core
+ExecStart=/usr/bin/node app -c /etc/lisk-core/config.json
+User=lisk-core
+Group=lisk-core
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+diff --git a/app.js b/app.js
+index cf637c9e..913c8d13 100644
+--- a/app.js
++++ b/app.js
+@@ -213,7 +213,7 @@ d.run(function () {
+ 					delete appConfig.loading.snapshot;
+ 				}
+ 
+-				fs.writeFileSync('./config.json', JSON.stringify(appConfig, null, 4));
++				fs.writeFileSync(program.config, JSON.stringify(appConfig, null, 4));
+ 
+ 				cb(null, appConfig);
+ 			} else {

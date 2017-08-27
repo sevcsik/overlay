@@ -1,19 +1,22 @@
---- config.json.orig	2017-02-06 01:09:31.126121991 +0100
-+++ config.json	2017-02-06 01:12:15.033089129 +0100
-@@ -4,16 +4,16 @@
-     "version": "0.5.2",
-     "minVersion": "~0.5.0",
+diff --git a/config.json b/config.json
+index 6915ee18..16d70f8c 100644
+--- a/config.json
++++ b/config.json
+@@ -4,7 +4,7 @@
+     "version": "0.9.7",
+     "minVersion": ">=0.9.5",
      "fileLogLevel": "info",
 -    "logFileName": "logs/lisk.log",
-+    "logFileName": "/var/log/lisk/lisk.log",
-     "consoleLogLevel": "info",
++    "logFileName": "/var/log/lisk-core/lisk.log",
+     "consoleLogLevel": "none",
      "trustProxy": false,
      "topAccounts": false,
+@@ -12,9 +12,9 @@
      "db": {
          "host": "localhost",
          "port": 5432,
 -        "database": "lisk_main",
-+        "database": "lisk",
++        "database": "lisk-core",
          "user": "",
 -        "password": "password",
 +        "password": "",
