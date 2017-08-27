@@ -5,7 +5,7 @@ inherit user eutils systemd git-r3
 
 DESCRIPTION="Full node for the Lisk network (${NETWORK}net)"
 SLOT="0"
-LICENSE="MIT"
+LICENSE="GPL-3"
 KEYWORDS="~amd64"
 IUSE="systemd lisk-node"
 EGIT_REPO_URI="https://github.com/LiskHQ/lisk.git"
