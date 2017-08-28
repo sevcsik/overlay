@@ -1,0 +1,16 @@
+diff --git a/package.json b/package.json
+index 9f6e03d..c5c41d8 100644
+--- a/package.json
++++ b/package.json
+@@ -131,10 +131,7 @@
+     "artifactName": "lisk-nano-${os}-${arch}-${version}.${ext}",
+     "linux": {
+       "target": [
+-        "AppImage",
+-        "deb",
+-        "rpm",
+-        "tar.gz"
++        "dir"
+       ]
+     },
+     "win": {
