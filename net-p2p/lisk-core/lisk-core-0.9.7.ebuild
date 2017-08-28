@@ -7,7 +7,7 @@ DESCRIPTION="Full node for the Lisk network (${NETWORK}net)"
 SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
-IUSE="systemd lisk-node"
+IUSE="systemd"
 EGIT_REPO_URI="https://github.com/LiskHQ/lisk.git"
 EGIT_SUBMODULES=( '*' )
 EGIT_COMMIT="$PV"
@@ -17,7 +17,6 @@ DEPEND=">=net-libs/nodejs-6.0.0"
 
 RDEPEND=">=net-libs/nodejs-6.0.0 \
          >=dev-db/postgresql-9.6.2 \
-         lisk-node? ( =net-libs/lisk-node-6.11.1 )
         "
 
 USERNAME="$PN"
@@ -62,14 +61,6 @@ src_install() {
 
 	insinto /usr/lib/$PN
 	doins -r $S/*
-
-	if ! use lisk-node
-	then
-		elog "Enable the lisk-node use flag to run DApps."
-	else
-		dodir /usr/lib/$PN/nodejs
-		dosym /usr/lib/$PN/nodejs/node /usr/lib/lisk-node/bin/node
-	fi
 
 	dodir /var/$PN
 	dosym /var/$PN /usr/lib/$PN/dapps
