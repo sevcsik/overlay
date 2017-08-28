@@ -1,0 +1,13 @@
+diff --git a/bin/lisky b/bin/lisky
+index c3e1c8e..e2a0548 100755
+--- a/bin/lisky
++++ b/bin/lisky
+@@ -14,7 +14,7 @@
+  * Removal or modification of this copyright notice is prohibited.
+  *
+  */
+-var lisky = require('../dist').default;
++var lisky = require('/usr/lib/lisky').default;
+ 
+ function exit() {
+ 	return lisky.exec('exit');
