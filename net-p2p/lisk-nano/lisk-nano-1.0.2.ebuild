@@ -19,14 +19,12 @@ EGIT_CHECKOUT_DIR=$S
 
 src_prepare() {
 	epatch $FILESDIR/$P-electron-target.patch
-	#TODO strip test dependencies
 	npm install
 }
 
 src_compile() {
 	npm run build
 	npm run dist:linux
-	#TODO disable non-amd64 builds
 }
 
 src_test() {
@@ -38,4 +36,15 @@ src_install () {
 	doins -r $S/dist/linux-unpacked/*
 	dosym /usr/lib/$PN/lisk-nano /usr/bin/$PN
 	fperms a+x /usr/lib/$PN/lisk-nano
+
+	insinto /usr/share/icons/hicolor/128x128/apps
+	newins $FILESDIR/icon_128.png lisk-nano.png
+	insinto /usr/share/icons/hicolor/48x48/apps
+	newins $FILESDIR/icon_48.png lisk-nano.png
+	insinto /usr/share/icons/hicolor/32x32/apps
+	newins $FILESDIR/icon_32.png lisk-nano.png
+	insinto /usr/share/icons/hicolor/16x16/apps
+	newins $FILESDIR/icon_16.png lisk-nano.png
+	insinto /usr/share/applications
+	doins $FILESDIR/$PN.desktop
 }

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Lisk Nano
+Comment=Lightweight client for the Lisk network
+Categories=Network
+Exec=lisk-nano
+Icon=lisk-nano
